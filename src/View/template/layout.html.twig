@@ -11,9 +11,11 @@
     <link rel="stylesheet" href="/assets/css/style.css">
     {% block stylesheet %}{% endblock %}
     <link rel="icon" href="/assets/images/favicon.png">
+
 </head>
 <body>
 
+{% include 'template/header.html.twig' %}
 
 {% block content %}{% endblock %}
 {% block javascript %}{% endblock %}

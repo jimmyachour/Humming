@@ -1,0 +1,139 @@
+@font-face {
+    font-face-name: 'Kaufmann_Regular';
+    src: url("../fonts/Kaufmann_Regular.ttf");
+}
+
+
+/**********************/
+/****** GLOBAL ********/
+/**********************/
+.navbar-dark .navbar-nav .nav-link
+{
+    color: white;
+}
+
+.navbar-dark .navbar-toggler
+{
+    border-color: white;
+}
+
+.navbar-brand
+{
+    padding-left: 0;
+}
+
+/**********************/
+/****** Header ********/
+/**********************/
+
+/*****   Nav-Bar    ***/
+
+.header-box-wood
+{
+    display: flex;
+    justify-content: space-between;
+}
+
+.main-logo
+{
+    width: 10em;
+}
+
+header
+{
+    background: url("../images/wood.jpg");
+}
+
+.navbar_hearder
+{
+    color: white;
+}
+
+button.header-nav-btn
+{
+    border-color: white;
+}
+
+.header-nav-list
+{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.header-nav-list li
+{
+    display: flex;
+    margin-right: 20%;
+}
+
+li.header-last-item
+{
+    margin-right: 0;
+}
+
+.arrow_bird
+{
+    width: 50px;
+    height: 15px;
+    margin-top: 13px;
+}
+
+/******** Bloc Bottom navbar **********/
+
+.left-leaf
+{
+    height: 100%;
+}
+
+.hearder-box-deco
+{
+    position: relative;
+    text-align: center;
+    margin-left: -10%;
+    margin-bottom: 5%;
+    margin-top: 5%;
+}
+
+.header-bird
+{
+    position: absolute;
+    left: 10%;
+    width: 50%;
+    z-index: 20;
+}
+
+.header-picts
+{
+    width: 70%;
+    z-index: 10;
+    margin-left: 40%;
+}
+
+.right-leaf
+{
+    height: 100%;
+    margin-top: auto;
+}
+
+
+@media screen and (max-width: 675px) {
+
+    .left-leaf,.right-leaf
+    {
+        display: none;
+    }
+
+    .header-bird
+    {
+        width: 40%;
+        left: 50%;
+        bottom: 70%;
+    }
+
+    .header-picts
+    {
+        margin-left: 10%;
+    }
+
+}
