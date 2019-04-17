@@ -1,7 +1,5 @@
 <?php
-
 namespace App\Entity;
-
 
 class Client
 {
@@ -32,6 +30,7 @@ class Client
     /**
      * @param mixed $lastname
      */
+
     public function setLastname($lastname)
     {
         $this->lastname = $lastname;

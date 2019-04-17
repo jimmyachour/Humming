@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Model;
 
 class ClientManager extends AbstractManager
@@ -20,3 +19,4 @@ class ClientManager extends AbstractManager
         }
     }
 }
+
