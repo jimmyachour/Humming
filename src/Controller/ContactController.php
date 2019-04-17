@@ -1,15 +1,26 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: JIMMY
- * Date: 13/04/2019
- * Time: 23:13
- */
 
 namespace App\Controller;
 
+use App\Model\ClientManager;
+use App\Entity\Client;
 
-class ContactController
+class ContactController extends AbstractController
 {
+    public function index()
+    {
+        return $this->twig->render('Contact/index.html.twig');
+    }
 
+    public function add()
+    {
+        $client = new Client();
+        $clientManager = new ClientManager('client');
+
+        $client->hydrate($_POST);
+
+        $clientManager->add($_POST);
+
+        header('Location:/contact');
+    }
 }
