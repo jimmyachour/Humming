@@ -9,9 +9,18 @@
  * @link     https://github.com/WildCodeSchool/simple-mvc
  */
 
-
 $routeParts = explode('/', ltrim($_SERVER['REQUEST_URI'], '/') ?: HOME_PAGE);
-$controller = 'App\Controller\\' . ucfirst($routeParts[0] ?? '') . 'Controller';
+
+if ( empty($routeParts[1])) {
+    unset($routeParts[1]);
+}
+
+if (strtolower($routeParts[0]) == 'admin') {
+    $controller = 'App\Controller\\' . ucfirst($routeParts[1] ?? '') . 'AdminController';
+} else {
+    $controller = 'App\Controller\\' . ucfirst($routeParts[0] ?? '') . 'Controller';
+}
+
 $method = $routeParts[1] ?? MAIN_PAGE;
 $vars = array_slice($routeParts, 2);
 
