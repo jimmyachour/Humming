@@ -1,21 +1,25 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: JIMMY
- * Date: 14/04/2019
- * Time: 23:10
- */
 
 namespace App\Entity;
 
 
-class contact
+class Client
 {
     private $lastname,
             $firstname,
             $mail,
             $phone,
             $message;
+
+    public function hydrate($data)
+    {
+        foreach ($data as $key => $value) {
+            $method = 'set'.ucfirst($key);
+            if (is_callable([$this, $method])) {
+                $this->$method($value);
+            }
+        }
+    }
 
     /**
      * @return mixed
@@ -28,7 +32,7 @@ class contact
     /**
      * @param mixed $lastname
      */
-    public function setLastname($lastname): void
+    public function setLastname($lastname)
     {
         $this->lastname = $lastname;
     }
@@ -44,7 +48,7 @@ class contact
     /**
      * @param mixed $firstname
      */
-    public function setFirstname($firstname): void
+    public function setFirstname($firstname)
     {
         $this->firstname = $firstname;
     }
@@ -60,7 +64,7 @@ class contact
     /**
      * @param mixed $mail
      */
-    public function setMail($mail): void
+    public function setMail($mail)
     {
         $this->mail = $mail;
     }
@@ -76,7 +80,7 @@ class contact
     /**
      * @param mixed $phone
      */
-    public function setPhone($phone): void
+    public function setPhone($phone)
     {
         $this->phone = $phone;
     }
@@ -92,7 +96,7 @@ class contact
     /**
      * @param mixed $message
      */
-    public function setMessage($message): void
+    public function setMessage($message)
     {
         $this->message = $message;
     }
