@@ -10,4 +10,9 @@ class MenuAdminController extends AbstractController
 
         return $this->twig->render('MenuAdmin/index.html.twig');
     }
+
+    public function list()
+    {
+        return $this->twig->render('MenuAdmin/list.html.twig');
+    }
 }

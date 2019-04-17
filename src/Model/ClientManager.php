@@ -9,7 +9,7 @@
 namespace App\Model;
 
 
-class ContactManager
+class ClientManager
 {
 
 }
