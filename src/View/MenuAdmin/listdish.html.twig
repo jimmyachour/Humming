@@ -1,0 +1,18 @@
+{% extends 'TemplateAdmin/layout.html.twig' %}
+
+{% block content %}
+    <h1>Les Plats</h1>
+    {% for dish in allDish %}
+        <div>
+            <p>{{ dish.id }}</p>
+            <div>
+                <p>{{ dish.title }}</p>
+                <p>{{ dish.composition }}</p>
+            </div>
+            <div>
+                <a href="">Modifier</a>
+                <a href="">Supprimer</a>
+            </div>
+        </div>
+    {% endfor  %}
+{% endblock %}

@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: JIMMY
- * Date: 13/04/2019
- * Time: 18:42
- */
 
 namespace App\Model;
 
@@ -19,4 +13,6 @@ class DishManager extends AbstractManager
     {
         parent::__construct(self::TABLE);
     }
+
+
 }
