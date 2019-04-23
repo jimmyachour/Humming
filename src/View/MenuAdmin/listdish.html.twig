@@ -2,16 +2,22 @@
 
 {% block content %}
     <h1>Les Plats</h1>
+    <div>
+        <a href="/admin/menu/listdish/">Tous</a> |
+        <a href="/admin/menu/liststart/">Entrées</a> |
+        <a href="/admin/menu/listbetween/">Plats</a> |
+        <a href="/admin/menu/listdessert/">Desserts</a>
+    </div>
     {% for dish in allDish %}
         <div>
-            <p>{{ dish.id }}</p>
+            <p>{{ dish.id }} || {{ dish.type }}</p>
             <div>
                 <p>{{ dish.title }}</p>
                 <p>{{ dish.composition }}</p>
             </div>
             <div>
-                <a href="">Modifier</a>
-                <a href="">Supprimer</a>
+                <a href="dish/{{ dish.id }}">Modifier</a>
+                <a href="/admin/menu/dishDelete/{{ dish.id }}">Supprimer</a>
             </div>
         </div>
     {% endfor  %}
