@@ -28,5 +28,4 @@ class DishManager extends AbstractManager
 
         return $statement->fetchAll();
     }
-
 }

@@ -42,27 +42,12 @@ class MenuAdminController extends AbstractController
         $dishManager->delete($id);
     }
 
-    public function liststart()
+    public function list($type)
     {
         $allDishManager = new DishManager();
-        $allDish = $allDishManager->selectAllByType('start');
+        $allDish = $allDishManager->selectAllByType($type);
 
         return $this->twig->render('MenuAdmin/listdish.html.twig', [ 'allDish' => $allDish]);
     }
 
-    public function listbetween()
-    {
-        $allDishManager = new DishManager();
-        $allDish = $allDishManager->selectAllByType('between');
-
-        return $this->twig->render('MenuAdmin/listdish.html.twig', [ 'allDish' => $allDish]);
-    }
-
-    public function listdessert()
-    {
-        $allDishManager = new DishManager();
-        $allDish = $allDishManager->selectAllByType('dessert');
-
-        return $this->twig->render('MenuAdmin/listdish.html.twig', [ 'allDish' => $allDish]);
-    }
 }
