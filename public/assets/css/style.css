@@ -1,7 +1,6 @@
-@font-face {
-    font-face-name: 'Kaufmann_Regular';
-    src: url("../fonts/Kaufmann_Regular.ttf");
-}
+@import url('https://fonts.googleapis.com/css?family=Itim');
+
+
 
 
 /**********************/
@@ -136,4 +135,78 @@ li.header-last-item
         margin-left: 10%;
     }
 
+}
+
+/**********************/
+/****** Footer ********/
+/**********************/
+
+footer
+{
+    background: url("../images/wood.jpg");
+    color: white;
+    padding-top: 50px;
+}
+
+.elements
+{
+    flex-wrap: wrap;
+    align-items: stretch;
+    font-family: 'Itim', cursive;
+    font-size: 18px;
+
+}
+
+.bloc_humming
+{
+    padding: 0 50px;
+}
+
+
+.logo_footer_humming
+{
+    width: 150px;
+    height: 75px;
+}
+
+.logo_footer_bird
+{
+    width: 120px;
+    height: 84px;
+}
+
+iframe
+{
+    height: 200px;
+    width: 300px;
+    border:2px solid white;
+}
+
+.footer_social_logo
+{
+    filter: invert(100%);
+}
+
+
+.logo_fb
+{
+    margin-right: 20px;
+}
+
+
+.line_footer
+{
+    width: 95%;
+    margin-left: 85px;
+    border: 1px white solid;
+}
+
+.horaires_footer
+{
+    line-height: 20%;
+}
+
+.copyright
+{
+    margin-left: 230px;
 }
