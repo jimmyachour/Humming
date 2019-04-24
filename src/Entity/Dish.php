@@ -10,7 +10,7 @@ class Dish extends Entity
     private $price;
     private $type;
 
-    private $errors = [];
+    public $errors = [];
 
     /**
      * @return mixed
@@ -48,7 +48,11 @@ class Dish extends Entity
      */
     public function setTitle($title): void
     {
-        $this->title = $title;
+        if (!empty($title)) {
+            $this->title = $title;
+        } else {
+            $this->errors['title'] = 'Merci de saisir un titre de plat';
+        }
     }
 
     /**
@@ -56,7 +60,11 @@ class Dish extends Entity
      */
     public function setComposition($composition): void
     {
-        $this->composition = $composition;
+        if (!empty($composition)) {
+            $this->composition = $composition;
+        } else {
+            $this->errors['composition'] = 'Merci de saisir une composition de plat';
+        }
     }
 
     /**
@@ -64,7 +72,11 @@ class Dish extends Entity
      */
     public function setType($type): void
     {
-        $this->type = $type;
+        if (!empty($type)) {
+            $this->type = $type;
+        } else {
+            $this->errors['type'] = 'Merci de selectionner un type de plat';
+        }
     }
 
     /**
@@ -72,9 +84,16 @@ class Dish extends Entity
      */
     public function setPrice($price): void
     {
-        $this->price = $price;
+        if (!empty($price)) {
+            $this->price = $price;
+        } else {
+            $this->errors['price'] = 'Merci de saisir un prix à votre plat';
+        }
     }
 
+    /**
+     * @return bool
+     */
     public function isValid():bool
     {
         return !(empty($this->title) || empty($this->composition) || empty($this->price) || empty($this->type));
