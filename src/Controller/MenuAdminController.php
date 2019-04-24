@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 
+use App\Entity\Dish;
 use App\Model\DishManager;
 
 class MenuAdminController extends AbstractController
@@ -50,4 +51,25 @@ class MenuAdminController extends AbstractController
         return $this->twig->render('MenuAdmin/listdish.html.twig', [ 'allDish' => $allDish]);
     }
 
+    public function dishUpdate($id)
+    {
+        $dishManager = new DishManager();
+        $dish = $dishManager->selectOneById($id);
+
+        return $this->twig->render('MenuAdmin/dishForm.html.twig', [ 'dish' => $dish]);
+    }
+
+    public function update($id)
+    {
+        $dish = new Dish();
+
+        $dish->hydrate($_POST);
+
+        if ($dish->isValid()) {
+            $dishManager = new DishManager();
+            $dishManager->update($id, $dish);
+
+            header('Location: /admin/menu/listdish');
+        }
+    }
 }
