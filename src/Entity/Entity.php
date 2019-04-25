@@ -1,6 +1,6 @@
 <?php
 
-namespace App\OCTFRAM;
+namespace App\Entity;
 
 abstract class Entity
 {

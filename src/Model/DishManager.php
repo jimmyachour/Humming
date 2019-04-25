@@ -21,14 +21,14 @@ class DishManager extends AbstractManager
      *
      * @return array
      */
-    public function selectAllByType($type): array
+    public function selectAllByType(string $type): array
     {
         $statement = $this->pdo->prepare("SELECT * FROM $this->table WHERE type=:type");
 
         $statement->bindValue('type', $type, \PDO::PARAM_STR);
         $statement->execute();
 
-        return $statement->fetchAll();
+        return $statement->fetchAll(\PDO::FETCH_CLASS, 'App\Entity\Dish');
     }
 
     public function update(INT $id, Dish $dish): void

@@ -2,13 +2,15 @@
 
 namespace App\Controller;
 
-use App\Entity\Dish;
-use App\Model\DishManager;
+use App\Model\MenuManager;
 
 class MenuAdminController extends AbstractController
 {
-    public function listmenu()
+    public function list()
     {
-        return $this->twig->render('MenuAdmin/list.html.twig');
+        $menuManager = new MenuManager();
+        $allMenu = $menuManager->selectAll();
+
+        return $this->twig->render('MenuAdmin/list.html.twig', ['allMenu' => $allMenu]);
     }
 }
