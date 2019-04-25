@@ -3,7 +3,7 @@
 {% block content %}
     <div class="container">
         <h1>{{ dish.title }}</h1>
-        <form class="row" method="post" action="/admin/menu/save/{{ dish.id }}">
+        <form class="row" method="post" action="/admin/dish/save/{{ dish.id }}">
             <div class="form-group col-12 col-md-6">
                 <label for="title">Titre</label>
                 <input type="text" class="form-control" id="title" name="title" placeholder="Titre" value="{{ dish.title }}" required>
