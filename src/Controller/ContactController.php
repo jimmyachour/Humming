@@ -15,11 +15,11 @@ class ContactController extends AbstractController
     public function add()
     {
         $client = new Client();
-        $clientManager = new ClientManager('client');
+        $clientManager = new ClientManager();
 
         $client->hydrate($_POST);
 
-        $clientManager->add($_POST);
+        $clientManager->add($client);
 
         header('Location:/contact');
     }

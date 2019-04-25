@@ -2,9 +2,6 @@
 
 namespace App\Entity;
 
-use App\OCTFRAM\Entity;
-
-
 class Menu extends Entity
 {
     private $title;

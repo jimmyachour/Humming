@@ -2,7 +2,6 @@
 
 namespace App\Model;
 
-
 class MenuManager extends AbstractManager
 {
     const TABLE = 'menu';
