@@ -1,0 +1,35 @@
+{% extends 'TemplateAdmin/layout.html.twig' %}
+
+{% block content %}
+    <h1>Liste des Menus</h1>
+    <table class="table">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Titre</th>
+            <th scope="col">Prix</th>
+            <th scope="col">Statut</th>
+            <th scope="col">Voir</th>
+            <th scope="col">Modifier</th>
+            <th scope="col">Supprimer</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% set i=0 %}
+        {% for menu in allMenu %}
+            {% set i=i+1 %}
+            <tr>
+                <th scope="row">{{ i }}</th>
+                <td>{{ menu.title }}</td>
+                <td>{{ menu.price }}</td>
+                <td>{{ menu.statue }}</td>
+                <td><a href="detail/{{ menu.id }}">Voir</a></td>
+                <td><a href="update/{{ menu.id }}">Modifier</a></td>
+                <td><a href="delete/{{ menu.id }}">Supprimer</a></td>
+            </tr>
+        {% else %}
+            <div class="alert alert-warning" role="alert">Vous n'avez aucun menu de crée.</div>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

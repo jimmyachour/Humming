@@ -9,4 +9,5 @@ class AdminController extends AbstractController
     {
         return $this->twig->render('HomeAdmin/index.html.twig');
     }
+
 }
