@@ -3,16 +3,29 @@
 {% block content %}
     <div class="container">
         <h1>{{ dish.title }}</h1>
-        <form class="row" method="post" action="update/{{ dish.id }}">
+        <form class="row" method="post" action="/admin/menu/save/{{ dish.id }}">
             <div class="form-group col-12 col-md-6">
-                <label for="lastname"></label>
-                <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Votre nom">
+                <label for="title">Titre</label>
+                <input type="text" class="form-control" id="title" name="title" placeholder="Titre" value="{{ dish.title }}" required>
             </div>
             <div class="form-group col-12 col-md-6">
-                <label for="firstname"></label>
-                <input type="text" class="form-control" id="firstname" name="firstname" placeholder="Votre prénom">
+                <label for="composition">Composition</label>
+                <input type="text" class="form-control" id="composition" name="composition" placeholder="Composition du plat" value="{{ dish.composition }}" required>
             </div>
-            <input class="btn-action" type="submit" value="Modifier">
+            <div class="form-group col-12 col-md-6">
+                <label for="price">Prix</label>
+                <input type="text" class="form-control" id="composition" name="price" placeholder="Prix du plat" value="{{ dish.price }}" required>
+            </div>
+            <div class="form-group col-12 col-md-6">
+                <label for="price">Type de plat</label>
+                <select id="type"  class="form-control" name="type" required>
+                    <option value="">Choisissez un type de plat</option>
+                    <option value="start" {% if dish.type == 'start' %}selected {% endif %}>Entrée</option>
+                    <option value="between" {% if dish.type == 'between' %}selected {% endif %}>Plat</option>
+                    <option value="dessert" {% if dish.type == 'dessert' %}selected {% endif %}>Dessert</option>
+                </select>
+            </div>
+            <input class="btn-action" type="submit" value="Enregistrer">
         </form>
     </div>
 {% endblock %}
