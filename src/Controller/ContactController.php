@@ -21,6 +21,11 @@ class ContactController extends AbstractController
 
         $clientManager->add($_POST);
 
-        header('Location:/contact');
+        header('Location:/contact/success');
+    }
+
+    public function success()
+    {
+        return $this->twig->render('Contact/success.html.twig');
     }
 }
