@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Model;
 
 use App\Entity\Client;
@@ -13,9 +14,10 @@ class ClientManager extends AbstractManager
     }
 
 
-    public function add(Client $client):void
+    public function add(Client $client): int
     {
-        $sql = "INSERT INTO $this->table (lastname, firstname, mail, phone, message) VALUES (:lastname, :firstname, :mail, :phone, :message)";
+        $sql = "INSERT INTO $this->table (lastname, firstname, mail, phone, message) 
+                VALUES (:lastname, :firstname, :mail, :phone, :message)";
         $statement = $this->pdo->prepare($sql);
 
         $statement->bindValue('lastname', $client->getLastname(), \PDO::PARAM_STR);
@@ -29,4 +31,3 @@ class ClientManager extends AbstractManager
         }
     }
 }
-
