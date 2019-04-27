@@ -17,7 +17,7 @@ class MenuAdminController extends AbstractController
 
         return $this->twig->render('MenuAdmin/list.html.twig', ['allMenu' => $allMenu]);
     }
-
+  
     public function listDish(INT $idMenu, string $type)
     {
         $menuDishManager = new MenuDishManager();

@@ -46,7 +46,12 @@ class DishManager extends AbstractManager
 
     public function update(INT $id, Dish $dish): void
     {
-        $statement = $this->pdo->prepare("UPDATE $this->table SET title=:title ,composition=:composition ,type=:type, price=:price WHERE id=:id");
+        $statement = $this->pdo->prepare("UPDATE $this->table 
+                                                    SET title=:title, 
+                                                        composition=:composition, 
+                                                        type=:type, 
+                                                        price=:price 
+                                                    WHERE id=:id");
 
         $statement->bindValue('title', $dish->getTitle(), \PDO::PARAM_STR);
         $statement->bindValue('composition', $dish->getComposition(), \PDO::PARAM_STR);
@@ -59,7 +64,8 @@ class DishManager extends AbstractManager
 
     public function insert(Dish $dish): void
     {
-        $statement = $this->pdo->prepare("INSERT INTO $this->table (title , composition, type, price) VALUES (:title, :composition, :type, :price)");
+        $statement = $this->pdo->prepare("INSERT INTO $this->table (title , composition, type, price) 
+                                                    VALUES (:title, :composition, :type, :price)");
 
         $statement->bindValue('title', $dish->getTitle(), \PDO::PARAM_STR);
         $statement->bindValue('composition', $dish->getComposition(), \PDO::PARAM_STR);

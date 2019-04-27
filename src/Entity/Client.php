@@ -1,92 +1,123 @@
 <?php
+
 namespace App\Entity;
 
+/**
+ * Class Client
+ * @package App\Entity
+ */
 class Client extends Entity
 {
-    private $lastname,
-            $firstname,
-            $mail,
-            $phone,
-            $message;
+    /**
+     * @var string
+     */
+    private $lastname;
 
     /**
-     * @return mixed
+     * @var string
      */
-    public function getLastname()
+    private $firstname;
+    /**
+     * @var string
+     */
+    private $mail;
+
+    /**
+     * @var string
+     */
+    private $phone;
+    /**
+     * @var string
+     */
+    private $message;
+
+    /**
+     * @return string
+     */
+    public function getLastname(): string
     {
         return $this->lastname;
     }
 
     /**
-     * @param mixed $lastname
+     * @param string $lastname
+     * @return Client
      */
-
-    public function setLastname($lastname)
+    public function setLastname(string $lastname): Client
     {
         $this->lastname = $lastname;
+        return $this;
     }
 
     /**
-     * @return mixed
+     * @return string
      */
-    public function getFirstname()
+    public function getFirstname(): string
     {
         return $this->firstname;
     }
 
     /**
-     * @param mixed $firstname
+     * @param string $firstname
+     * @return Client
      */
-    public function setFirstname($firstname)
+    public function setFirstname(string $firstname): Client
     {
         $this->firstname = $firstname;
+        return $this;
     }
 
     /**
-     * @return mixed
+     * @return string
      */
-    public function getMail()
+    public function getMail(): string
     {
         return $this->mail;
     }
 
     /**
-     * @param mixed $mail
+     * @param string $mail
+     * @return Client
      */
-    public function setMail($mail)
+    public function setMail(string $mail): Client
     {
         $this->mail = $mail;
+        return $this;
     }
 
     /**
-     * @return mixed
+     * @return string
      */
-    public function getPhone()
+    public function getPhone(): string
     {
         return $this->phone;
     }
 
     /**
-     * @param mixed $phone
+     * @param string $phone
+     * @return Client
      */
-    public function setPhone($phone)
+    public function setPhone(string $phone): Client
     {
         $this->phone = $phone;
+        return $this;
     }
 
     /**
-     * @return mixed
+     * @return string
      */
-    public function getMessage()
+    public function getMessage(): string
     {
         return $this->message;
     }
 
     /**
-     * @param mixed $message
+     * @param string $message
+     * @return Client
      */
-    public function setMessage($message)
+    public function setMessage(string $message): Client
     {
         $this->message = $message;
+        return $this;
     }
 }
