@@ -2,8 +2,8 @@
 
 namespace App\Controller;
 
-use App\Entity\Dish;
 use App\Model\DishManager;
+use App\Entity\Dish;
 
 class DishAdminController extends AbstractController
 {

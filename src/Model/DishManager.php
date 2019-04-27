@@ -31,6 +31,19 @@ class DishManager extends AbstractManager
         return $statement->fetchAll(\PDO::FETCH_CLASS, 'App\Entity\Dish');
     }
 
+    public function selectWithoutDishOfMenuByType($listIdMenu, $type):array
+    {
+        $additionalSentence = '';
+
+        foreach ($listIdMenu as $idMenu) {
+            $additionalSentence .= ' id!=' . $idMenu['dish_id'] . ' AND';
+        }
+
+        $statement = $this->pdo->query("SELECT * FROM $this->table WHERE type='$type' AND" . trim($additionalSentence, 'AND'));
+
+        return $statement->fetchAll(\PDO::FETCH_CLASS, 'App\Entity\Dish');
+    }
+
     public function update(INT $id, Dish $dish): void
     {
         $statement = $this->pdo->prepare("UPDATE $this->table SET title=:title ,composition=:composition ,type=:type, price=:price WHERE id=:id");
@@ -55,4 +68,5 @@ class DishManager extends AbstractManager
 
         $statement->execute();
     }
+
 }
