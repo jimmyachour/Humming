@@ -8,6 +8,78 @@ h1
     margin-bottom: 40px;
 }
 
+a:hover
+{
+    text-decoration: none;
+}
+.btn-link
+{
+    border-radius: 5px;
+    border: 0;
+    background-color: black;
+    color: white;
+    font-size: 16px;
+    padding: 10px;
+    transition: 1.5s;
+}
+
+.btn-link:hover
+{
+    background-color: #ffc8d1;
+    color: #000000;
+    transition: 1.5s;
+    text-decoration: none;
+}
+
+.btn-action
+{
+    width: 150px;
+    height: 40px;
+    border-radius: 5px;
+    border: 0;
+    background-color: black;
+    color: white;
+    font-size:24px;
+    margin-right: auto;
+    margin-left: auto;
+    transition: 1.5s;
+}
+
+.btn-action:hover
+{
+    background-color: #ffc8d1;
+    color: #000000;
+    transition: 1.5s;
+}
+
+.btn-new-dish
+{
+    margin-left: auto;
+    margin-right:15px;
+    margin-bottom: 30px;
+
+}
+
+.box-btn-filter-dish
+{
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.box-btn-filter-dish a
+{
+    color: black;
+    font-size: 20px;
+    transition: 0.5s;
+}
+
+.box-btn-filter-dish a:hover
+{
+    color: #f99ead;
+    transition: 0.5s;
+}
+
 
 /************************/
 /****** Menu-Admin ******/
@@ -15,6 +87,10 @@ h1
 
 
 
+
+/************************/
+/****** Admin/card ******/
+/************************/
 .menu-box-btn
 {
     justify-content: space-around;
@@ -23,12 +99,24 @@ h1
     height: 600px;
 }
 
-
 .menu-box-btn a.btn-lg
 {
     margin-bottom : 40px;
     height: 200px;
     line-height: 200px;
+    border-radius: 5px;
+    border: 0;
     background-color: black;
     color: white;
+    font-size:24px;
+    margin-right: auto;
+    margin-left: auto;
+    transition: 1.5s;
+}
+
+.menu-box-btn a.btn-lg:hover
+{
+    background-color: #ffc8d1;
+    color: #000000;
+    transition: 1.5s;
 }
