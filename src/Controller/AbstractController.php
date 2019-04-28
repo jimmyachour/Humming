@@ -71,4 +71,5 @@ abstract class AbstractController
 
         return $a && $b;
     }
+
 }

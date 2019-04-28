@@ -1,0 +1,121 @@
+{% extends 'TemplateAdmin/layout.html.twig' %}
+
+{% block content %}
+    <div class="container">
+        <h1>{{ menu.title }}</h1>
+        <form class="row" method="post" action="/admin/menu/save/{{ menu.id }}">
+            <div class="form-group col-12 col-md-6">
+                <label for="title">Titre du Menu</label>
+                <input type="text" class="form-control" id="title" name="title" placeholder="Titre" value="{{ menu.title }}" required>
+            </div>
+            <div class="form-group col-12 col-md-6">
+                <label for="price">Prix du Menu</label>
+                <input type="text" class="form-control" id="composition" name="price" placeholder="Prix du plat" value="{{ menu.price }}" required>
+            </div>
+            <input class="btn-action" type="submit" value="Enregistrer">
+        </form>
+        <table class="table">
+            <thead class="thead-dark">
+            <tr>
+                <th colspan="5">Entrée</th>
+            </tr>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Titre</th>
+                <th scope="col">Prix</th>
+                <th scope="col">Modifier</th>
+                <th scope="col">Supprimer</th>
+            </tr>
+            </thead>
+            <tbody>
+                {% set i=0 %}
+                {% for dish in menu.listStart %}
+                    {% set i=i+1 %}
+                    <tr>
+                        <th scope="row">{{ i }}</th>
+                        <td>{{ dish.title }}</td>
+                        <td>{{ dish.price }}</td>
+                        <td><a href="/admin/dish/update/{{ dish.id }}">Modifier</a></td>
+                        <td><a href="/admin/menu/remove/{{ menu.id }}/{{ dish.id }}">Enlever</a></td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="5">Désolé mais aucune entrée n'a été selectionnée</td>
+                    </tr>
+                {% endfor %}
+                <tr>
+                    <td colspan="5"> <a href="/admin/menu/listDish/{{ menu.id }}/start">Ajouter une entrée</a></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table class="table">
+            <thead class="thead-dark">
+            <tr>
+                <th colspan="5">Plats</th>
+            </tr>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Titre</th>
+                <th scope="col">Prix</th>
+                <th scope="col">Modifier</th>
+                <th scope="col">Supprimer</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% set i=0 %}
+            {% for dish in menu.listBetween%}
+                {% set i=i+1 %}
+                <tr>
+                    <th scope="row">{{ i }}</th>
+                    <td>{{ dish.title }}</td>
+                    <td>{{ dish.price }}</td>
+                    <td><a href="/admin/dish/update/{{ dish.id }}{{ lastURL }}">Modifier</a></td>
+                    <td><a href="/admin/menu/remove/{{ menu.id }}/{{ dish.id }}">Enlever</a></td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="5">Désolé mais aucun plat n'a été selectionné</td>
+                </tr>
+            {% endfor %}
+            <tr>
+                <td colspan="5"> <a href="/admin/menu/listDish/{{ menu.id }}/between">Ajouter un plat</a></td>
+            </tr>
+            </tbody>
+        </table>
+        <table class="table">
+            <thead class="thead-dark">
+            <tr>
+                <th colspan="5">Desserts</th>
+            </tr>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Titre</th>
+                <th scope="col">Prix</th>
+                <th scope="col">Modifier</th>
+                <th scope="col">Supprimer</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% set i=0 %}
+            {% for dish in menu.listDessert %}
+                {% set i=i+1 %}
+                <tr>
+                    <th scope="row">{{ i }}</th>
+                    <td>{{ dish.title }}</td>
+                    <td>{{ dish.price }}</td>
+                    <td><a href="/admin/dish/update/{{ dish.id }}">Modifier</a></td>
+                    <td><a href="/admin/menu/remove/{{ menu.id }}/{{ dish.id }}">Enlever</a></td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="5">Désolé mais aucun dessert n'a été selectionnée</td>
+                </tr>
+            {% endfor %}
+            <tr>
+                <td colspan="5"> <a href="/admin/menu/listDish/{{ menu.id }}/dessert">Ajouter un dessert</a></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
