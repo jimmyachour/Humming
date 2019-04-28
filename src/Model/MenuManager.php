@@ -2,6 +2,8 @@
 
 namespace App\Model;
 
+use App\Entity\Menu;
+
 class MenuManager extends AbstractManager
 {
     const TABLE = 'menu';
@@ -10,4 +12,36 @@ class MenuManager extends AbstractManager
     {
         parent::__construct(self::TABLE);
     }
+
+    public function selectOneById(int $id):Menu
+    {
+        $statement = $this->pdo->prepare("SELECT * FROM $this->table WHERE id=:id");
+        $statement->bindValue('id', $id, \PDO::PARAM_INT);
+        $statement->execute();
+
+        return $statement->fetchObject('App\Entity\Menu');
+    }
+
+    public function insertTitleAndPrice(Menu $menu):void
+    {
+        $statement = $this->pdo->prepare("INSERT INTO $this->table (title , price) VALUES (:title,:price)");
+
+        $statement->bindValue('title', $menu->getTitle(), \PDO::PARAM_STR);
+        $statement->bindValue('price', $menu->getPrice(), \PDO::PARAM_INT);
+
+        $statement->execute();
+
+    }
+
+    public function updateTitleAndPrice(INT $id,Menu $menu):void
+    {
+        $statement = $this->pdo->prepare("UPDATE $this->table SET title=:title, price=:price WHERE id =:id");
+
+        $statement->bindValue('title', $menu->getTitle(), \PDO::PARAM_STR);
+        $statement->bindValue('price', $menu->getPrice(), \PDO::PARAM_INT);
+        $statement->bindValue('id', $id, \PDO::PARAM_INT);
+
+        $statement->execute();
+    }
 }
+
