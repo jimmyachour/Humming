@@ -6,9 +6,12 @@ class Menu extends Entity
 {
     private $title;
     private $price;
-    private $listDish = [];
+    private $statue;
+    private $listStart = [];
+    private $listBetween = [];
+    private $listDessert = [];
 
-    private $errors = [];
+    public $errors = [];
 
     /**
      * @return mixed
@@ -27,11 +30,35 @@ class Menu extends Entity
     }
 
     /**
+     * @return mixed
+     */
+    public function getStatue()
+    {
+        return $this->statue;
+    }
+
+    /**
      * @return array
      */
-    public function getListDish(): array
+    public function getListStart(): array
     {
-        return $this->listDish;
+        return $this->listStart;
+    }
+
+    /**
+     * @return array
+     */
+    public function getListBetween(): array
+    {
+        return $this->listBetween;
+    }
+
+    /**
+     * @return array
+     */
+    public function getListDessert(): array
+    {
+        return $this->listDessert;
     }
 
     /**
@@ -59,14 +86,54 @@ class Menu extends Entity
     }
 
     /**
-     * @param array $listDish
+     * @param Dish $start
      */
-    public function setListDish(array $listDish): void
+    public function setListStart(Dish $start): void
     {
-        if (!empty($listDish)) {
-            $this->listDish = $listDish;
-        } else {
-            $this->errors['listDish'] = 'De selectionner au moins un plat à votre Menu';
+        $this->listStart[] = $start;
+    }
+
+    /**
+     * @param Dish $between
+     */
+    public function setListBetween(Dish $between): void
+    {
+        $this->listBetween[] = $between;
+    }
+
+    /**
+     * @param Dish $dessert
+     */
+    public function setListDessert(Dish $dessert): void
+    {
+        $this->listDessert[] = $dessert;
+    }
+
+    /**
+     * @param mixed $statue
+     */
+    public function setStatue($statue): void
+    {
+        $this->statue = $statue;
+    }
+
+    /**
+     * Repartition dish in different type
+     * @param $dishOfMenu
+     */
+    public function repartitionOfDish(array $dishOfMenu):void
+    {
+        foreach ($dishOfMenu as $dish) {
+            $method = 'setList' . ucfirst($dish->getType());
+            $this->$method($dish);
         }
+    }
+
+    /**
+     * @return bool
+     */
+    public function isValid(): bool
+    {
+        return !(empty($this->title) || empty($this->price));
     }
 }

@@ -2,7 +2,6 @@
 
 namespace App\Controller;
 
-
 class CardAdminController extends AbstractController
 {
     public function index()
