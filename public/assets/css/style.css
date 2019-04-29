@@ -210,3 +210,78 @@ iframe
 {
     margin-left: 230px;
 }
+
+/**********************/
+/****** Contenu home ********/
+/**********************/
+
+.home_content
+{
+    background: url("../images/white_wood_bg.jpg");
+}
+
+
+.image_home
+{
+    width: 600px;
+    height: 550px;
+    margin-top: 150px;
+    margin-bottom: 150px;
+    padding-left: 40px;
+    border: 1px black solid;
+    padding: 20px;
+}
+
+/* .description
+{
+    display: flex;
+    justify-content: center;
+    margin-top: 150px;
+} */
+
+.description
+{
+    display: flex;
+    align-items: center;
+}
+
+
+.desc_humming
+{
+    justify-content: center;
+}
+
+.desc_text
+{
+    justify-content: right;
+    padding-left: 60px;
+    padding-right: 20px;
+    font-family: 'Itim', cursive;
+    font-size: 20px;
+}
+
+
+.carousel_container
+{
+    padding: 100px;
+}
+
+.heart1
+{
+    float: left;
+    width: 30px;
+    height: 30px;
+}
+
+.heart2
+{
+    float: right;
+    width: 30px;
+    height: 30px;
+}
+
+h1
+{
+    text-align: center;
+    font-size: 40px;
+}
