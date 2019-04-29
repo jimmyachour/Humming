@@ -1,25 +1,51 @@
 {% extends 'TemplateAdmin/layout.html.twig' %}
 
 {% block content %}
-    <h1>Les Plats</h1>
-    <a href="/admin/menu/dishCreate/">Nouveau Plat</a>
-    <div>
-        <a href="/admin/dish/list/">Tous</a> |
-        <a href="/admin/dish/listBy/start/">Entrées</a> |
-        <a href="/admin/dish/listBy/between/">Plats</a> |
-        <a href="/admin/dish/listBy/dessert/">Desserts</a>
-    </div>
-    {% for dish in allDish %}
-        <div>
-            <p>{{ dish.id }} || {{ dish.type }}</p>
-            <div>
-                <p>{{ dish.title }}</p>
-                <p>{{ dish.composition }}</p>
-            </div>
-            <div>
-                <a href="/admin/dish/update/{{ dish.id }}">Modifier</a>
-                <a href="/admin/dish/delete/{{ dish.id }}">Supprimer</a>
-            </div>
-        </div>
-    {% endfor  %}
+     <div class="container">
+         <h1>Liste des </h1>
+         <div class="row box-btn-new-dish">
+             <a class="btn-link btn-new-dish" href="/admin/menu/dishCreate/">Nouveau Plat</a>
+         </div>
+         <div class="box-btn-filter-dish">
+             <a href="/admin/dish/list/">Tous</a> |
+             <a href="/admin/dish/listBy/start/">Entrées</a> |
+             <a href="/admin/dish/listBy/between/">Plats</a> |
+             <a href="/admin/dish/listBy/dessert/">Desserts</a>
+         </div>
+         <table class="table">
+             <thead class="thead-dark">
+             <tr>
+                 <th scope="col">#</th>
+                 <th scope="col">Titre</th>
+                 <th scope="col">Composition</th>
+                 <th scope="col">Type</th>
+                 <th scope="col">Prix</th>
+                 <th scope="col">Modifier</th>
+                 <th scope="col">Supprimer</th>
+             </tr>
+             </thead>
+             <tbody>
+             {% set i=0 %}
+             {% for dish in allDish %}
+                 {% set i=i+1 %}
+                 <tr>
+                     <th scope="row">{{ i }}</th>
+                     <td>{{ dish.title }}</td>
+                     <td>{{ dish.composition }}</td>
+                     {% if dish.type == 'start' %}
+                         <td>Entrée</td>
+                     {% elseif dish.type == 'between' %}
+                         <td>Entrée</td>
+                     {% else %}
+                         <td>Entrée</td>
+                     {% endif %}
+                     <td>{{ dish.price }}</td>
+                     <td><a href="/admin/dish/update/{{ dish.id }}">Modifier</a></td>
+                     <td><a href="/admin/dish/delete/{{ dish.id }}">Supprimer</a></td>
+                 </tr>
+             {% endfor %}
+             </tbody>
+         </table>
+     </div>
 {% endblock %}
+
