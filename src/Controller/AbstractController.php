@@ -72,4 +72,8 @@ abstract class AbstractController
         return $a && $b;
     }
 
+    public function showRequest(string $response)
+    {
+         $this->twig->addGlobal('notification', $response);
+    }
 }
