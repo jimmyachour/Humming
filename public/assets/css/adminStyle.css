@@ -18,6 +18,17 @@ a:hover
     text-decoration: none;
     color: #ffc8d1;
 }
+
+.btn-back-adminHome
+{
+    color: black;
+}
+
+.btn-back-adminHome:hover
+{
+    color: #ffc8d1;
+}
+
 .btn-link
 {
     border-radius: 5px;

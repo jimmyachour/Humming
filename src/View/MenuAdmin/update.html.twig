@@ -3,6 +3,7 @@
 {% block content %}
     <div class="container">
         <h1>{{ menu.title }}</h1>
+        <a class="btn-back-adminHome" href="/admin">&#8592; Retour accueil</a>
         <form class="row" method="post" action="/admin/menu/save/{{ menu.id }}">
             <div class="form-group col-12 col-md-6">
                 <label for="title">Titre du Menu</label>
