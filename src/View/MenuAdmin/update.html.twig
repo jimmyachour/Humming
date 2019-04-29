@@ -3,6 +3,7 @@
 {% block content %}
     <div class="container">
         <h1>{{ menu.title }}</h1>
+        <a class="btn-back-adminHome" href="/admin">&#8592; Retour accueil</a>
         <form class="row" method="post" action="/admin/menu/save/{{ menu.id }}">
             <div class="form-group col-12 col-md-6">
                 <label for="title">Titre du Menu</label>
@@ -12,7 +13,7 @@
                 <label for="price">Prix du Menu</label>
                 <input type="text" class="form-control" id="composition" name="price" placeholder="Prix du plat" value="{{ menu.price }}" required>
             </div>
-            <input class="btn-action" type="submit" value="Enregistrer">
+            <input class="btn-action btn-save-menu" type="submit" value="Enregistrer">
         </form>
         <table class="table">
             <thead class="thead-dark">
@@ -35,8 +36,8 @@
                         <th scope="row">{{ i }}</th>
                         <td>{{ dish.title }}</td>
                         <td>{{ dish.price }}</td>
-                        <td><a href="/admin/dish/update/{{ dish.id }}">Modifier</a></td>
-                        <td><a href="/admin/menu/remove/{{ menu.id }}/{{ dish.id }}">Enlever</a></td>
+                        <td><a class="link-menu-update" href="/admin/dish/update/{{ dish.id }}">Modifier</a></td>
+                        <td><a class="link-menu-update" href="/admin/menu/remove/{{ menu.id }}/{{ dish.id }}">Enlever</a></td>
                     </tr>
                 {% else %}
                     <tr>
@@ -70,8 +71,8 @@
                     <th scope="row">{{ i }}</th>
                     <td>{{ dish.title }}</td>
                     <td>{{ dish.price }}</td>
-                    <td><a href="/admin/dish/update/{{ dish.id }}{{ lastURL }}">Modifier</a></td>
-                    <td><a href="/admin/menu/remove/{{ menu.id }}/{{ dish.id }}">Enlever</a></td>
+                    <td><a class="link-menu-update" href="/admin/dish/update/{{ dish.id }}{{ lastURL }}">Modifier</a></td>
+                    <td ><a class="link-menu-update" href="/admin/menu/remove/{{ menu.id }}/{{ dish.id }}">Enlever</a></td>
                 </tr>
             {% else %}
                 <tr>
@@ -104,8 +105,8 @@
                     <th scope="row">{{ i }}</th>
                     <td>{{ dish.title }}</td>
                     <td>{{ dish.price }}</td>
-                    <td><a href="/admin/dish/update/{{ dish.id }}">Modifier</a></td>
-                    <td><a href="/admin/menu/remove/{{ menu.id }}/{{ dish.id }}">Enlever</a></td>
+                    <td><a class="link-menu-update" href="/admin/dish/update/{{ dish.id }}">Modifier</a></td>
+                    <td><a class="link-menu-update" href="/admin/menu/remove/{{ menu.id }}/{{ dish.id }}">Enlever</a></td>
                 </tr>
             {% else %}
                 <tr>
