@@ -43,5 +43,6 @@ class MenuManager extends AbstractManager
 
         $statement->execute();
     }
+
 }
 
