@@ -23,9 +23,10 @@ class ReservationManager extends AbstractManager  // class ClientManager
      */
     public function add(array $reservation): int
     {
+
         $sql = "INSERT INTO $this->table 
 (reservDate, reservTime, reservNbr, reservLastname, reservFirstname, reservMail,reservPhone) 
-VALUES (:reservDate, :reservTime, :reservNbr, ::reservLastname, ::reservFirstname, ::reservMail, ::reservPhone)";
+VALUES (:reservDate, :reservTime, :reservNbr, :reservLastname, :reservFirstname, :reservMail, :reservPhone)";
         $statement = $this->pdo->prepare($sql);
 
         $statement->bindValue('reservDate', $reservation['reservDate'], \PDO::PARAM_STR);
