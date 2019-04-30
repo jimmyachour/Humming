@@ -97,6 +97,11 @@ a:hover
     transition: 0.5s;
 }
 
+.btn-reservation
+{
+    margin-top: 30px;
+}
+
 /************************/
 /****** Menu-Admin ******/
 /************************/

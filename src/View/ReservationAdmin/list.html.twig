@@ -1,0 +1,13 @@
+{% extends 'templateAdmin/layout.html.twig' %}
+
+{% block content %}
+    <div class="container">
+        <h1>Modifier une réservation</h1>
+        {% if notification is not empty %}
+            <div class="alert alert-success" role="alert">
+                {{ notification }}
+            </div>
+        {% endif %}
+        {% include 'ReservationAdmin/form.html.twig' %}
+    </div>
+{% endblock content %}

@@ -3,51 +3,41 @@
 
 {% block content %}
 
-<section class="home_content container-fluid">
-    <div class="container">
-        <div class="container carousel_container">
+    <section class="home_content container">
+        <div class="carousel_container">
             <div class="carousel slide" data-ride="carousel" data-interval="3000">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <div class="row">
-                            <div class="col-sm"><img class="d-block w-100" src="/assets/images/carousel_3.jpg" alt="1 slide"></div>
-                            <div class="col-sm"><img class="d-block w-100" src="/assets/images/carousel_4.jpg" alt="2 slide"></div>
-                            <div class="col-sm"><img class="d-block w-100" src="/assets/images/carousel_1.jpg" alt="3 slide"></div>
+                            <div class="col-sm img-home-car"><img class="d-block w-100" src="/assets/images/carousel_3.jpg" alt="1 slide"></div>
+                            <div class="col-sm img-home-car"><img class="d-block w-100" src="/assets/images/carousel_4.jpg" alt="2 slide"></div>
+                            <div class="col-sm img-home-car"><img class="d-block w-100" src="/assets/images/carousel_1.jpg" alt="3 slide"></div>
                         </div>
                     </div>
                     <div class="carousel-item">
                         <div class="row">
-                            <div class="col-sm"><img class="d-block w-100" src="/assets/images/carousel_5.jpg" alt="4 slide"></div>
-                            <div class="col-sm"><img class="d-block w-100" src="/assets/images/carousel_2.jpg" alt="5 slide"></div>
-                            <div class="col-sm"><img class="d-block w-100" src="/assets/images/carousel_4.jpg" alt="6 slide"></div>
+                            <div class="col-sm img-home-car"><img class="d-block w-100" src="/assets/images/carousel_5.jpg" alt="4 slide"></div>
+                            <div class="col-sm img-home-car"><img class="d-block w-100" src="/assets/images/carousel_2.jpg" alt="5 slide"></div>
+                            <div class="col-sm img-home-car"><img class="d-block w-100" src="/assets/images/carousel_4.jpg" alt="6 slide"></div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
-    <div class="description">
-
-    <img src="/assets/images/img_home.jpg" alt="image_accueil" class="col-4 image_home">
-        <div class="col-8 desc_text">
-            <h1>
-                <img src="/assets/images/heart.png" alt="heart" class="heart1">
+        <div class="row">
+            <img src="/assets/images/img_home.jpg" alt="image_accueil" class="image_home col-11 col-md-5">
+            <div class="box-home-text col-12 col-md-7">
+                <h1 class="col-12">
+                    <img src="/assets/images/heart.png" alt="heart" class="heart">
                     Nous concernant
-                <img src="/assets/images/heart.png" alt="heart" class="heart2">
-            </h1>
-            <br>
-            <p class="desc_humming">Lampadi nondum in hos nondum consulari codicem ad Baeticae causam  manu filius principem descripsisse lanuginis eius fumo ut duci carnificis comitatum Lollianus lanuginis adulescens consulari sperabatur Baeticae primae.
-                <br>
-                <br>
-                Ac convenit reputantium lapsorum beate gloriosam levitate ad coetuum vieturo licentia patriam perfecta tamquam ac hic gloriosam splendor ac.
-                <br> <br>
-                Quae mihi quos aut inter sane amaret ego etiam Phaedrum ille controversia cum utrumque mihi utrumque audivi mihi sententiae.
-                <br> <br>
-                Inquam reliqua atque impetus exhausti signa refertissimam.
-                <br> <br>
-                Suam levius nomine scilicet clades igitur nomine mandatum.</p>
+                    <img src="/assets/images/heart.png" alt="heart" class="heart">
+                </h1>
+                <div class="desc_text">
+                    <p class="desc_humming">Lampadi nondum in hos nondum consulari codicem ad Baeticae causam  manu filius principem descripsisse lanuginis eius fumo ut duci carnificis comitatum Lollianus lanuginis adulescens consulari sperabatur Baeticae primae.</p>
+                    <p>Ac convenit reputantium lapsorum beate gloriosam levitate ad coetuum vieturo licentia patriam perfecta tamquam ac hic gloriosam splendor ac.</p>
+                    <p>Quae mihi quos aut inter sane amaret ego etiam Phaedrum ille controversia cum utrumque mihi utrumque audivi mihi sententiae. Inquam reliqua atque impetus exhausti signa refertissimam. Suam levius nomine scilicet clades igitur nomine mandatum.</p>
+                </div>
+            </div>
         </div>
-
-    </div>
-</section>
+    </section>
 {% endblock %}
