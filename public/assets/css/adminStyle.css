@@ -8,6 +8,11 @@ h1
     margin-bottom: 40px;
 }
 
+.nav-admin
+{
+    margin-left: 300px;
+}
+
 a
 {
     color: black;
@@ -143,3 +148,4 @@ td > a.link-menu-Update
     color: #000000;
     transition: 1.5s;
 }
+
