@@ -28,8 +28,8 @@
                     <tr>
                         <td><label for="id">{{ i }}</label></td>
                         <td>{{ dish.title }}</td>
-                        <td>dish.composition</td>
-                        <td>dish.price</td>
+                        <td>{{ dish.composition }}</td>
+                        <td>{{ dish.price }}</td>
                         <td><input id="id" type="checkbox" name="id[]" value="{{ dish.id }}"></td>
                     </tr>
                     {% else %}

@@ -24,9 +24,24 @@ a:hover
     color: black;
 }
 
-.btn-back-adminHome:hover
+.btn-add-menu
 {
-    color: #ffc8d1;
+    margin-top:26px;
+    padding: 10px;
+    line-height: 2px;
+    background-color: black;
+    height:35px;
+    border-radius: 5px;
+    border: 0;
+    color: white;
+}
+
+.btn-add-menu:hover
+{
+    background-color: #ffc8d1;
+    color: #000000;
+    transition: 1.5s;
+    text-decoration: none;
 }
 
 .btn-link
@@ -47,6 +62,7 @@ a:hover
     transition: 1.5s;
     text-decoration: none;
 }
+
 
 .btn-new-dish
 {

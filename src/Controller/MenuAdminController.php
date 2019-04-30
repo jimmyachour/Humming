@@ -64,6 +64,14 @@ class MenuAdminController extends AbstractController
         return $this->twig->render('MenuAdmin/update.html.twig', ['menu' => $menu,'allDishs' => $allDishs]);
     }
 
+    public function delete(INT $menuId)
+    {
+        $menuManager = new MenuManager();
+        $menuManager->delete($menuId);
+
+        header('Location: /admin/menu/list');
+    }
+
     public function remove(INT $menuId, INT $dishId)
     {
         $menuDishManager = new MenuDishManager();
