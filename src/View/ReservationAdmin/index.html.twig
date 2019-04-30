@@ -1,0 +1,47 @@
+{% extends 'TemplateAdmin/layout.html.twig' %}
+
+{% block content %}
+    <div class="container">
+        <h1>Vos réservations</h1>
+        <h3>Ajouter une réservation</h3>
+        {% include 'ReservationAdmin/form.html.twig' %}
+        <h3>Gérer vos réservations</h3>
+        <table class="table">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nom</th>
+                <th scope="col">Prénom</th>
+                <th scope="col">Mail</th>
+                <th scope="col">Téléphone</th>
+                <th scope="col">Date</th>
+                <th scope="col">Heure</th>
+                <th scope="col">Pers.</th>
+                <th scope="col">Modifier</th>
+                <th scope="col">Supprimer</th>
+
+            </tr>
+            </thead>
+            <tbody>
+            {% set i=0 %}
+            {% for reservation in reservations %}
+                {% set i=i+1 %}
+                <tr>
+                    <th scope="row">{{ i }}</th>
+                    <td>{{ reservation.reservLastname }}</td>
+                    <td>{{ reservation.reservFirstname }}</td>
+                    <td>{{ reservation.reservMail }}</td>
+                    <td>{{ reservation.reservPhone }}</td>
+                    <td>{{ reservation.reservDate }}</td>
+                    <td>{{ reservation.reservTime }}</td>
+                    <td>{{ reservation.reservNbr }}</td>
+                    <td><a href="/admin/reservation/update/{{ reservation.id }}">Modifier</a></td>
+                    <td><a href="/admin/reservation/delete/{{ reservation.id }}">Supprimer</a></td>
+                </tr>
+            {% else %}
+                <div class="alert alert-warning" role="alert">Vous n'avez aucune réservation</div>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
