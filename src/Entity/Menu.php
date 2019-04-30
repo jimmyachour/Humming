@@ -6,7 +6,7 @@ class Menu extends Entity
 {
     private $title;
     private $price;
-    private $statue;
+    private $status;
     private $listStart = [];
     private $listBetween = [];
     private $listDessert = [];
@@ -32,9 +32,9 @@ class Menu extends Entity
     /**
      * @return mixed
      */
-    public function getStatue()
+    public function getStatus()
     {
-        return $this->statue;
+        return $this->status;
     }
 
     /**
@@ -112,9 +112,9 @@ class Menu extends Entity
     /**
      * @param mixed $statue
      */
-    public function setStatue($statue): void
+    public function setStatus($status): void
     {
-        $this->statue = $statue;
+        $this->status = $status;
     }
 
     /**
