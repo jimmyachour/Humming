@@ -39,6 +39,7 @@ abstract class AbstractController
         );
         $this->twig->addExtension(new DebugExtension());
         $this->twig->addGlobal('openTime', $this->isOpen());
+        $this->twig->addGlobal('REQUEST_URI', $_SERVER['REQUEST_URI']);
     }
 
 
