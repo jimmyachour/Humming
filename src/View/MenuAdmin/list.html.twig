@@ -3,6 +3,22 @@
 {% block content %}
     <div class="container">
         <h1>Liste des Menus</h1>
+        <fieldset>
+            <legend>Ajouter un menu</legend>
+            <form class="row" method="post" action="/admin/menu/save">
+                <div class="form-group col-12 col-md-5">
+                    <label for="title"></label>
+                    <input type="text" class="form-control" id="title" name="title" placeholder="Titre du menu">
+                </div>
+                <div class="form-group col-12 col-md-4">
+                    <label for="price"></label>
+                    <input type="text" class="form-control" id="price" name="price" placeholder="Prix du menu">
+                </div>
+                <div class="form-group col-12 col-md-3">
+                    <input class="btn-add-menu" type="submit" value="Ajouter">
+                </div>
+            </form>
+        </fieldset>
         <table class="table">
             <thead class="thead-dark">
             <tr>
@@ -23,7 +39,7 @@
                     <th scope="row">{{ i }}</th>
                     <td>{{ menu.title }}</td>
                     <td>{{ menu.price }}</td>
-                    <td>{{ menu.statue }}</td>
+                    <td>{{ menu.status }}</td>
                     <td><a href="detail/{{ menu.id }}">Voir</a></td>
                     <td><a href="update/{{ menu.id }}">Modifier</a></td>
                     <td><a href="delete/{{ menu.id }}">Supprimer</a></td>

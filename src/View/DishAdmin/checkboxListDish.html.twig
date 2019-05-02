@@ -2,6 +2,7 @@
 
 {% block content %}
     <div class="container">
+        <a class="btn-back-adminHome" href="/admin">Retour accueil</a>
         {% if type == "start" %}
             <h1>Liste des entrées</h1>
         {% elseif type == "between" %}
@@ -27,8 +28,8 @@
                     <tr>
                         <td><label for="id">{{ i }}</label></td>
                         <td>{{ dish.title }}</td>
-                        <td>dish.composition</td>
-                        <td>dish.price</td>
+                        <td>{{ dish.composition }}</td>
+                        <td>{{ dish.price }}</td>
                         <td><input id="id" type="checkbox" name="id[]" value="{{ dish.id }}"></td>
                     </tr>
                     {% else %}

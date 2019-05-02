@@ -6,19 +6,29 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav header-nav-list">
-                <li class="nav-item active">
-
-                    <img class="arrow_bird" src="/assets/images/arrow_bird_white.png" alt="fleche blanche">
-                    <a class="nav-link" href="/carte">&nbsp;Carte</a>
+                <li class="nav-item">
+                    {% if REQUEST_URI=='/contact' %}
+                        <img class="arrow_bird" src="/assets/images/arrow_bird_white.png" alt="fleche blanche">
+                    {% endif %}
+                    <a class="nav-link" href="/carte/">&nbsp;Carte</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/reservation">&nbsp;Réservation</a>
+                    {% if REQUEST_URI=='/reservation/request' %}
+                        <img class="arrow_bird" src="/assets/images/arrow_bird_white.png" alt="fleche blanche">
+                    {% endif %}
+                    <a class="nav-link" href="/reservation/request">&nbsp;Réservation</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/commander">&nbsp;Commander</a>
+                    {% if REQUEST_URI=='/contact' %}
+                        <img class="arrow_bird" src="/assets/images/arrow_bird_white.png" alt="fleche blanche">
+                    {% endif %}
+                    <a class="nav-link" href="/commander/">&nbsp;Commander</a>
                 </li>
                 <li class="nav-item header-last-item">
-                    <a class="nav-link" href="/contact">&nbsp;Contact</a>
+                    {% if REQUEST_URI=='/contact/' %}
+                        <img class="arrow_bird" src="/assets/images/arrow_bird_white.png" alt="fleche blanche">
+                    {% endif %}
+                    <a class="nav-link" href="/contact/">&nbsp;Contact</a>
                 </li>
             </ul>
         </div>
@@ -32,4 +42,5 @@
         <img class="header-deco right-leaf" src="/assets/images/right-leaf.png"/>
     </div>
 </header>
+
 

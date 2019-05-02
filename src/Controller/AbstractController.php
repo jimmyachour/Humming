@@ -39,6 +39,7 @@ abstract class AbstractController
         );
         $this->twig->addExtension(new DebugExtension());
         $this->twig->addGlobal('openTime', $this->isOpen());
+        $this->twig->addGlobal('REQUEST_URI', $_SERVER['REQUEST_URI']);
     }
 
 
@@ -70,5 +71,10 @@ abstract class AbstractController
         $b = !in_array($jourActuel, $planningDesFermetures) ;
 
         return $a && $b;
+    }
+
+    public function showRequest(string $response)
+    {
+         $this->twig->addGlobal('notification', $response);
     }
 }
