@@ -71,6 +71,11 @@ h1
     transition: 1.5s;
 }
 
+.btn-reservation
+{
+    margin-top: 30px;
+}
+
 /**********************/
 /****** Header ********/
 /**********************/
@@ -228,11 +233,6 @@ footer
     margin-bottom: 60px;
 }
 
-.bloc_humming
-{
-    /*  padding: 0 50px;*/
-}
-
 .title-footer
 {
     font-size: 24px;
@@ -338,24 +338,7 @@ iframe
     }
 }
 
-@media screen and (max-width: 768px) {
 
-    .left-img-footer
-    {
-        transform: rotate(180deg);
-        top:-50px;
-        right:-50px;
-        width: 30%;
-    }
-
-    .right-img-footer
-    {
-        visibility: visible;
-        top: -200px;
-        right: -45px;
-        width: 40%;
-    }
-}
 
 /**********************/
 /****** Contact *******/
@@ -372,21 +355,12 @@ iframe
 /**********************/
 .image_home
 {
-    width: 600px;
-    height: 550px;
-    margin-top: 150px;
-    margin-bottom: 150px;
-    padding-left: 40px;
+    width: 100%;
+    height:0%;
+    margin-top: 20px;
     border: 1px black solid;
-    padding: 20px;
+    padding: 10px;
 }
-
-/* .description
-{
-    display: flex;
-    justify-content: center;
-    margin-top: 150px;
-} */
 
 .description
 {
@@ -394,7 +368,10 @@ iframe
     align-items: center;
 }
 
-
+.box-home-text > h1
+{
+    font-size: 1.8rem;
+}
 .desc_humming
 {
     justify-content: center;
@@ -402,38 +379,30 @@ iframe
 
 .desc_text
 {
-    justify-content: right;
-    padding-left: 60px;
-    padding-right: 20px;
+    padding-left: 5%;
+    padding-right: 5%;
+    text-align: justify;
     font-family: 'Itim', cursive;
     font-size: 20px;
 }
 
-
+.desc_text > p
+{
+    margin-top: 8%;
+}
 .carousel_container
 {
-    padding: 100px;
+    margin-top: 10%;
+    margin-bottom: 10%;
 }
 
-.heart1
+.heart
 {
-    float: left;
+    margin-bottom: 10px;
     width: 30px;
     height: 30px;
 }
 
-.heart2
-{
-    float: right;
-    width: 30px;
-    height: 30px;
-}
-
-h1
-{
-    text-align: center;
-    font-size: 40px;
-}
 .map-contact
 {
     border: 1px solid #999999;
@@ -626,3 +595,34 @@ h1
     background-color: #ffc8d1;
     color: #000000;
 }
+
+@media screen and (max-width: 768px) {
+
+    .left-img-footer
+    {
+        transform: rotate(180deg);
+        top:-50px;
+        right:-50px;
+        width: 30%;
+    }
+
+    .right-img-footer
+    {
+        visibility: visible;
+        top: -200px;
+        right: -45px;
+        width: 40%;
+    }
+
+    .image_home
+    {
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .box-home-text > h1
+    {
+        margin-top: 40px;
+    }
+}
+

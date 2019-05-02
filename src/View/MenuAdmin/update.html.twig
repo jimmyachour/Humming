@@ -13,6 +13,12 @@
                 <label for="price">Prix du Menu</label>
                 <input type="text" class="form-control" id="composition" name="price" placeholder="Prix du plat" value="{{ menu.price }}" required>
             </div>
+            <div class="custom-control custom-radio">
+                <label for="enable">Activer</label>
+                <input type= "radio" name="status" id="enable" value="1" {% if menu.status == 1 %}checked{% endif %}>
+                <label for="disable">Désactiver</label>
+                <input type= "radio" name="status" id="disable" value="0" {% if menu.status == 0 %}checked{% endif %}>
+            </div>
             <input class="btn-action btn-save-menu" type="submit" value="Enregistrer">
         </form>
         <table class="table">

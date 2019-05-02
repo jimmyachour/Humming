@@ -1,0 +1,33 @@
+{% block form %}
+    <form class="row" method="post" action="/admin/reservation/save/{{ id }}">
+        <div class="form-group col-12 col-md-6">
+            <label for="reservLastname"></label>
+            <input type="text" class="form-control" id="reservLastname" name="reservLastname" placeholder="Votre nom" value="{{ reservation.reservLastname }}" required>
+        </div>
+        <div class="form-group col-12 col-md-6">
+            <label for="reservFirstname"></label>
+            <input type="text" class="form-control" id="reservFirstname" name="reservFirstname" placeholder="Votre prénom" value="{{ reservation.reservFirstname }}" required>
+        </div>
+        <div class="form-group col-12 col-md-6">
+            <label for="reservMail"></label>
+            <input type="email" class="form-control" id="reservMail" name="reservMail" placeholder="Votre mail" value="{{ reservation.reservMail }}" required>
+        </div>
+        <div class="form-group col-12 col-md-6">
+            <label for="reservPhone"></label>
+            <input type="tel" class="form-control" id="reservPhone" name="reservPhone" placeholder="Votre téléphone" value="{{ reservation.reservPhone }}" required>
+        </div>
+        <div class="form-group col-12 col-md-6">
+            <label for="reservDate">Date de votre réservation</label>
+            <input type="date" class="form-control" id="reservDate" name="reservDate" value="{{ reservation.reservDate }}" required>
+        </div>
+        <div class="form-group col-12 col-md-6">
+            <label for="reservTime">Heure de votre réservation</label>
+            <input type="time" class="form-control" id="reservTime" name="reservTime" value="{{ reservation.reservTime }}" required>
+        </div>
+        <div class="form-group col-12 col-md-6">
+            <label for="reservNbr">Nombre de personnes</label>
+            <input type="number" class="form-control" id="reservNbr" name="reservNbr" value="1" value="{{ reservation.reservNbr }}" required>
+        </div>
+        <input class="btn-action btn-reservation" type="submit" value="Envoyer">
+    </form>
+{% endblock form %}

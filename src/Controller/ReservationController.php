@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Reservation;
 use App\Model\ClientManager;
 use App\Entity\Client;
 use App\Model\ReservationManager;
@@ -15,13 +16,17 @@ class ReservationController extends AbstractController
             $notification = "Votre reservation est enregistrée !";
         }
         return $this->twig->render('Reservation/index.html.twig', ['notification' => $notification]);
-    }
+}
 
     public function add()
     {
+
+        $reservation = new Reservation();
+        $reservation->hydrate($_POST);
+
         $reservationManager = new ReservationManager();
 
-        $reservationManager->add($_POST);
+        $reservationManager->add($reservation);
 
         header('Location:/reservation/request/?resa=success');
         exit();
