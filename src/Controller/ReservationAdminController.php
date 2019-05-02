@@ -22,7 +22,7 @@ class ReservationAdminController extends AbstractController
         $reservationManager = new ReservationManager();
         $reservation = $reservationManager->selectOneById($id);
 
-        return $this->twig->render('ReservationAdmin/list.html.twig', [ 'reservation' => $reservation, 'id' => $id]);
+        return $this->twig->render('ReservationAdmin/update.html.twig', [ 'reservation' => $reservation, 'id' => $id]);
     }
 
     public function delete(INT $id)
