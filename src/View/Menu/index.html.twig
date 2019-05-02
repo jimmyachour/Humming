@@ -1,0 +1,23 @@
+{% extends 'template/layout.html.twig' %}
+
+{% block content %}
+    <section class="container menu_containt">
+        <h1 class="col-12">Menus du moment</h1>
+            {% set currentMenu = '' %}
+            {% for menu in menus %}
+                {% if menu.menu != currentMenu %}
+                    {% set currentMenu = menu.menu %}
+                    {% if not loop.first %}
+                        </div>
+                    {% endif %}
+                    <div class="menu">
+                        <div class="box_menu">
+                            <h2>{{ menu.menu ~ ' ' ~ menu.price}} Euros</h2>
+                            {% endif %}
+
+                            <p class="dish">-{{ menu.dish }} (Plat seul: {{ menu.priceSolo }} Euros)</p>
+                            {% endfor %}
+                        </div>
+                    </div>
+    </section>
+{% endblock %}

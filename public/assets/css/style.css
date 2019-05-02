@@ -596,6 +596,51 @@ iframe
     color: #000000;
 }
 
+
+/**********************/
+/****** Menu ********/
+/**********************/
+
+.box_menu
+{
+    background: url("../images/essai18.png");
+    background-position: center;
+    padding:15%;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    font-family: 'Itim', cursive;
+    text-align: center;
+    margin-bottom: 10%;
+}
+
+h2
+{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-decoration: underline;
+}
+
+.dish
+{
+    padding-top: 10px;
+    padding-bottom: 20px;
+    font-size: 20px;
+}
+
+h1
+{
+    font-family: 'Itim', cursive;
+    font-size: 50px;
+    margin-bottom: 10%;
+}
+
+@media screen and (min-width: 250px) and (max-width: 990px) {
+    .box_menu {
+        background: url("../images/ivory.jpg");
+        border: #999999 1px solid;
+    }
+}
+
 @media screen and (max-width: 768px) {
 
     .left-img-footer
