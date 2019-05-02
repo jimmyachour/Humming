@@ -75,4 +75,14 @@ class DishManager extends AbstractManager
         $statement->execute();
     }
 
+    public function selectOneDishById(int $id)
+    {
+        // prepared request
+        $statement = $this->pdo->prepare("SELECT * FROM $this->table WHERE id=:id");
+        $statement->bindValue('id', $id, \PDO::PARAM_INT);
+        $statement->execute();
+
+        return $statement->fetchObject('App\Entity\Dish');
+    }
+
 }

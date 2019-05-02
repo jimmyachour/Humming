@@ -19,7 +19,6 @@ class ReservationController extends AbstractController
 
     public function add()
     {
-
         $reservationManager = new ReservationManager();
 
         $reservationManager->add($_POST);

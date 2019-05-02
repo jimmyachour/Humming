@@ -1,0 +1,45 @@
+{% extends 'template/layout.html.twig' %}
+{% block content %}
+
+    <div class="container">
+        <h1>Passer commande</h1>
+        <div class="row">
+            <div class="box-order-content nav nav-tabs col-12" >
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        {% if REQUEST_URI=='/order/' %}
+                            <a class="nav-link active" href="/order/">Nos menus</a>
+                        {% else %}
+                            <a class="nav-link" href="/order/">Nos menus</a>
+                        {% endif %}
+                    </li>
+                    <li class="nav-item">
+                        {% if REQUEST_URI=='/order/by/type/start/' %}
+                            <a class="nav-link active" href="/order/by/type/start">Entrées</a>
+                        {% else %}
+                            <a class="nav-link" href="/order/by/type/start/">Entrées</a>
+                        {% endif %}
+                    </li>
+                    <li class="nav-item">
+                        {% if REQUEST_URI=='/order/by/type/between/' %}
+                            <a class="nav-link active" href="/order/by/type/between/">Plats</a>
+                        {% else %}
+                            <a class="nav-link" href="/order/by/type/between/">Plats</a>
+                        {% endif %}
+                    </li>
+                    <li class="nav-item">
+                        {% if REQUEST_URI=='/order/by/type/dessert/' %}
+                            <a class="nav-link active" href="/order/by/type/dessert/">Desserts</a>
+                        {% else %}
+                            <a class="nav-link" href="/order/by/type/dessert/">Desserts</a>
+                        {% endif %}
+                    </li>
+                </ul>
+                <div>
+                    {% block contentCard %}{% endblock contentCard %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}

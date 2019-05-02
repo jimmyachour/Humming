@@ -4,6 +4,8 @@
 namespace App\Model;
 
 
+use App\Entity\Menu;
+
 class MenuDishManager extends AbstractManager
 {
     const TABLE = 'menu_dish';
@@ -58,6 +60,4 @@ class MenuDishManager extends AbstractManager
             $statement->execute();
         }
     }
-
-
 }

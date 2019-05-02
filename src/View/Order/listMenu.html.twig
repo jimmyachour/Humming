@@ -1,0 +1,71 @@
+{% extends 'Order/index.html.twig' %}
+
+{% block contentCard %}
+    {% for menu in allMenus %}
+    <div class="row order-box-card">
+        <div class="card order-menu-card col-12">
+            <h2>{{ menu.title }} {{ menu.price }}€</h2>
+            <img class="card-img-top" src="http://www.lefashionpost.com/app/media/368a6066-d3a6-43f3-ac0a-73d4fbac2f8e" alt="repas">
+            <div class="card-body">
+                <form action="/order/add/type/menu/{{ menu.id }}" method="post">
+                    <div class="order-subtitle-box">
+                        <img class="order-arrow arrow-left" src="/assets/images/arrow_bird_black.png" alt="fleche blanche">
+                        <h3 class="card-title">Nos Entrées</h3>
+                        <img class="order-arrow arrow-right" src="/assets/images/arrow_bird_black.png" alt="fleche blanche">
+                    </div>
+                    <table class="table">
+                        <tbody>
+                        {% for start in menu.listStart %}
+                            <tr>
+                                <td class="order-subTitle"><h4>{{ start.title }}</h4></td>
+                                <td class="order-compo">{{ start.composition }}</td>
+                                <td class="order-check" ><input type="radio" name="start" value="{{ start.id }}" required></td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                    <div class="order-subtitle-box">
+                        <img class="order-arrow arrow-left" src="/assets/images/arrow_bird_black.png" alt="fleche blanche">
+                        <h3 class="card-title">Nos Plats</h3>
+                        <img class="order-arrow arrow-right" src="/assets/images/arrow_bird_black.png" alt="fleche blanche">
+                    </div>
+                    <table class="table">
+                        <tbody>
+                        {% for between in menu.listBetween %}
+                            <tr>
+                                <td class="order-subTitle"><h4>{{ between.title }}</h4></td>
+                                <td class="order-compo">{{ between.composition }}</td>
+                                <td class="order-check"><input type="radio" name="between" value="{{ between.id }}"  required></td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                    <div class="order-subtitle-box">
+                        <img class="order-arrow arrow-left" src="/assets/images/arrow_bird_black.png" alt="fleche blanche">
+                        <h3 class="card-title">Nos Desserts</h3>
+                        <img class="order-arrow arrow-right" src="/assets/images/arrow_bird_black.png" alt="fleche blanche">
+                    </div>
+                    <table class="table">
+                        <tbody>
+                        {% for dessert in menu.listDessert %}
+                            <tr>
+                                <td class="order-subTitle"><h4>{{ dessert.title }}</h4></td>
+                                <td class="order-compo">{{ dessert.composition }}</td>
+                                <td class="order-check"><input type="radio" name="dessert" value="{{ dessert.id }}"  required></td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                    <div class="order-bottom-box">
+                        <input type="submit" class="btn-action" value="Ajouter">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    {% else %}
+        <div class="alert alert-warning" role="alert">
+            Désolé mais il n'y a aucun menu !
+        </div>
+    {% endfor %}
+{% endblock contentCard %}
