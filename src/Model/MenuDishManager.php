@@ -3,7 +3,6 @@
 
 namespace App\Model;
 
-
 class MenuDishManager extends AbstractManager
 {
     const TABLE = 'menu_dish';
@@ -47,7 +46,7 @@ class MenuDishManager extends AbstractManager
         return $statement->fetchAll(\PDO::FETCH_ASSOC);
     }
 
-    public function addDish(INT $idMenu,array $idDishs):void
+    public function addDish(INT $idMenu, array $idDishs):void
     {
         foreach ($idDishs as $idDish) {
             $statement = $this->pdo->prepare("INSERT INTO $this->table (menu_id , dish_id) VALUES (:menu_id,:dish_id)");
@@ -58,6 +57,4 @@ class MenuDishManager extends AbstractManager
             $statement->execute();
         }
     }
-
-
 }

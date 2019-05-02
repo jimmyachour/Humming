@@ -39,7 +39,8 @@ class DishManager extends AbstractManager
             $additionalSentence .= ' id!=' . $idMenu['dish_id'] . ' AND';
         }
 
-        $statement = $this->pdo->query("SELECT * FROM $this->table WHERE type='$type' AND" . trim($additionalSentence, 'AND'));
+        $statement = $this->pdo->query("SELECT * FROM $this->table 
+                                                  WHERE type='$type' AND" . trim($additionalSentence, 'AND'));
 
         return $statement->fetchAll(\PDO::FETCH_CLASS, 'App\Entity\Dish');
     }
@@ -74,5 +75,4 @@ class DishManager extends AbstractManager
 
         $statement->execute();
     }
-
 }
