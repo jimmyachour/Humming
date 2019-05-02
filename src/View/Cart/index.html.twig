@@ -1,0 +1,72 @@
+{% extends 'template/layout.html.twig' %}
+{% block content %}
+<div class="container">
+    <h1>Votre petit repas</h1>
+    {% if notification is not empty %}
+        <div class="alert alert-success" role="alert">
+            {{ notification }}
+        </div>
+    {% endif %}
+        <div class="col-12">
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th scope="col">Produit</th>
+                        <th scope="col" class="text-center">Qté</th>
+                        <th scope="col"> </th>
+                        <th scope="col"> </th>
+                        <th scope="col" class="text-right">Prix</th>
+                        <th scope="col"> </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% set qtyMenu = 0 %}
+                    {% set ttMenu = 0 %}
+                    {% for menu in allMenus %}
+                        {% set qtyMenu = qtyMenu + 1 %}
+                        {% set ttMenu = ttMenu +  menu.price  %}
+                    <tr>
+                        <td>Menu : {{ menu.title }}</td>
+                        <td><input class="form-control" type="text" value="1" /></td>
+                        <td></td>
+                        <td></td>
+                        <td class="text-right">{{ menu.price }}€</td>
+                        <td></td>
+                    </tr>
+                    {% endfor %}
+                    {% set qtyDish = 0 %}
+                    {% set ttDish = 0 %}
+                    {% for dish in allDish %}
+                        {% set qtyDish = qtyDish + 1 %}
+                        {% set ttDish = ttDish +  dish.price  %}
+                        <tr>
+                            <td>{{ dish.title }}</td>
+                            <td><input class="form-control" type="text" value="1" /></td>
+                            <td></td>
+                            <td></td>
+                            <td class="text-right">{{ dish.price }}€</td>
+                            <td></td>
+                        </tr>
+                    {% endfor %}
+                    <tr>
+                        <td></td>
+                        <td>Vous avez {{ qtyMenu + qtyDish }} produits à commander</td>
+                        <td></td>
+                        <td></td>
+                        <td><strong>Total</strong></td>
+                        <td class="text-right"><strong>{{ ttMenu + ttDish }}€</strong></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col mb-2">
+            <div class="col-12 order-box-valid">
+                <a href="/order/command/"><button class="btn-order-valid">Passer commande</button></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

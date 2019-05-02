@@ -37,6 +37,7 @@ abstract class AbstractController
                 'debug' => APP_DEV,
             ]
         );
+        $this->twig->addGlobal('ttCart', $this->sumCart());
         $this->twig->addExtension(new DebugExtension());
         $this->twig->addGlobal('openTime', $this->isOpen());
         $this->twig->addGlobal('REQUEST_URI', $_SERVER['REQUEST_URI']);
@@ -76,5 +77,21 @@ abstract class AbstractController
     public function showRequest(string $response)
     {
          $this->twig->addGlobal('notification', $response);
+    }
+
+    public function sumCart()
+    {
+        $ttMenu = [];
+        $ttDish = [];
+
+        if (isset($_SESSION['cart']['menu'])) {
+            $ttMenu = $_SESSION['cart']['menu'];
+        }
+
+        if (isset($_SESSION['cart']['dish'])) {
+            $ttDish = $_SESSION['cart']['dish'];
+        }
+
+        return count($ttDish) + count($ttMenu);
     }
 }

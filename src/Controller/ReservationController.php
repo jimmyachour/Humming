@@ -20,6 +20,7 @@ class ReservationController extends AbstractController
 
     public function add()
     {
+
         $reservation = new Reservation();
         $reservation->hydrate($_POST);
 

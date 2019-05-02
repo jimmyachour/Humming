@@ -43,7 +43,22 @@ class MenuManager extends AbstractManager
 
         $statement->execute();
     }
+  
+    public function selectAllActive()
+    {
+        return $this->pdo->query("SELECT * FROM $this->table WHERE status= 1")->fetchAll(\PDO::FETCH_CLASS,'App\Entity\Menu');
+    }
 
+    public function selectMenuById(int $id)
+    {
+        // prepared request
+        $statement = $this->pdo->prepare("SELECT * FROM $this->table WHERE id=:id");
+        $statement->bindValue('id', $id, \PDO::PARAM_INT);
+        $statement->execute();
+
+        return $statement->fetchObject('App\Entity\Menu');
+    }
+    
     public function selectAllWithDishes(): array
     {
         $statement = $this->pdo->prepare("SELECT menu.title AS menu , menu.price AS price, 

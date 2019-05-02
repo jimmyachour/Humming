@@ -6,11 +6,11 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav header-nav-list">
-                <li class="nav-item">
-                    {% if REQUEST_URI=='/contact' %}
+                <li class="nav-item active">
+                    {% if REQUEST_URI=='/menu/' %}
                         <img class="arrow_bird" src="/assets/images/arrow_bird_white.png" alt="fleche blanche">
                     {% endif %}
-                    <a class="nav-link" href="/carte/">&nbsp;Carte</a>
+                    <a class="nav-link" href="/menu/">&nbsp;Carte</a>
                 </li>
                 <li class="nav-item">
                     {% if REQUEST_URI=='/reservation/request' %}
@@ -19,16 +19,22 @@
                     <a class="nav-link" href="/reservation/request">&nbsp;Réservation</a>
                 </li>
                 <li class="nav-item">
-                    {% if REQUEST_URI=='/contact' %}
+                    {% if REQUEST_URI=='/order/' or REQUEST_URI=='/order/by/type/start/' or REQUEST_URI=='/order/by/type/between/' or REQUEST_URI=='/order/by/type/dessert/'%}
                         <img class="arrow_bird" src="/assets/images/arrow_bird_white.png" alt="fleche blanche">
                     {% endif %}
-                    <a class="nav-link" href="/commander/">&nbsp;Commander</a>
+                    <a class="nav-link" href="/order/">&nbsp;Commande</a>
                 </li>
                 <li class="nav-item header-last-item">
                     {% if REQUEST_URI=='/contact/' %}
                         <img class="arrow_bird" src="/assets/images/arrow_bird_white.png" alt="fleche blanche">
                     {% endif %}
                     <a class="nav-link" href="/contact/">&nbsp;Contact</a>
+                </li>
+                <li class="nav-item header-last-item">
+                    <a class="nav-link" href="/cart/"><img class="assiette" src="/assets/images/assiette.png" alt="assiette"></a>
+                    {% if ttCart >= 0 %}
+                        <p class="count-cart">{{ ttCart }}</p>
+                    {% endif %}
                 </li>
             </ul>
         </div>
