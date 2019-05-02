@@ -8,10 +8,47 @@ h1
     margin-bottom: 40px;
 }
 
+.nav-admin
+{
+    margin-left: 300px;
+}
+
+a
+{
+    color: black;
+}
+
 a:hover
 {
     text-decoration: none;
+    color: #ffc8d1;
 }
+
+.btn-back-adminHome
+{
+    color: black;
+}
+
+.btn-add-menu
+{
+    margin-top:26px;
+    padding: 10px;
+    line-height: 2px;
+    background-color: black;
+    height:35px;
+    border-radius: 5px;
+    border: 0;
+    color: white;
+}
+
+.btn-add-menu:hover
+{
+    background-color: #ffc8d1;
+    color: #000000;
+    transition: 1.5s;
+    text-decoration: none;
+}
+
 .btn-link
 {
     border-radius: 5px;
@@ -31,26 +68,6 @@ a:hover
     text-decoration: none;
 }
 
-.btn-action
-{
-    width: 150px;
-    height: 40px;
-    border-radius: 5px;
-    border: 0;
-    background-color: black;
-    color: white;
-    font-size:24px;
-    margin-right: auto;
-    margin-left: auto;
-    transition: 1.5s;
-}
-
-.btn-action:hover
-{
-    background-color: #ffc8d1;
-    color: #000000;
-    transition: 1.5s;
-}
 
 .btn-new-dish
 {
@@ -80,13 +97,29 @@ a:hover
     transition: 0.5s;
 }
 
+.btn-reservation
+{
+    margin-top: 30px;
+}
 
 /************************/
 /****** Menu-Admin ******/
 /************************/
+.btn-save-menu
+{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
 
+.table
+{
+    text-align: center;
+}
 
-
+td > a.link-menu-Update
+{
+    color: black;
+}
 
 /************************/
 /****** Admin/card ******/
@@ -120,3 +153,4 @@ a:hover
     color: #000000;
     transition: 1.5s;
 }
+

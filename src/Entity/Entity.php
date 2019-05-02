@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+
 abstract class Entity
 {
     public function hydrate($data):void

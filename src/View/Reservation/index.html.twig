@@ -1,45 +1,44 @@
 {% extends 'template/layout.html.twig' %}
 {% block content %}
 
-<div class="container">
-    <h1>Reservation</h1>
-    {% if notification is not empty %}
-    <div class="alert alert-success" role="alert">
-        {{ notification }}
+    <div class="container">
+        <h1>Réservation</h1>
+        {% if notification is not empty %}
+            <div class="alert alert-success" role="alert">
+                {{ notification }}
+            </div>
+        {% endif %}
+        <form class="row" method="post" action="/reservation/add">
+            <div class="form-group col-12 col-md-6">
+                <label for="reservLastname"></label>
+                <input type="text" class="form-control" id="reservLastname" name="reservLastname" placeholder="Votre nom">
+            </div>
+            <div class="form-group col-12 col-md-6">
+                <label for="reservFirstname"></label>
+                <input type="text" class="form-control" id="reservFirstname" name="reservFirstname" placeholder="Votre prénom">
+            </div>
+            <div class="form-group col-12 col-md-6">
+                <label for="reservMail"></label>
+                <input type="email" class="form-control" id="reservMail" name="reservMail" placeholder="Votre mail">
+            </div>
+            <div class="form-group col-12 col-md-6">
+                <label for="reservPhone"></label>
+                <input type="tel" class="form-control" id="reservPhone" name="reservPhone" placeholder="Votre téléphone">
+            </div>
+            <div class="form-group col-12 col-md-6">
+                <label for="reservDate">Date de votre réservation</label>
+                <input type="date" class="form-control" id="reservDate" name="reservDate">
+            </div>
+            <div class="form-group col-12 col-md-6">
+                <label for="reservTime">Heure de votre réservation</label>
+                <input type="time" class="form-control" id="reservTime" name="reservTime">
+            </div>
+            <div class="form-group col-12 col-md-6">
+                <label for="reservNbr">Nombre de personnes</label>
+                <input type="number" class="form-control" id="reservNbr" name="reservNbr" value="1">
+            </div>
+            <input class="btn-action btn-reservation" type="submit" value="Envoyer">
+        </form>
     </div>
-    {% endif %}
-    <p>Un mail de validation vous confirmera votre réservation</p>
-    <form class="row" method="post" action="/reservation/add">
-        <div class="form-group col-12 col-md-6">
-            <label for="reservLastname"></label>
-            <input type="text" class="form-control" id="reservLastname" name="reservLastname" placeholder="Votre nom">
-        </div>
-        <div class="form-group col-12 col-md-6">
-            <label for="reservFirstname"></label>
-            <input type="text" class="form-control" id="reservFirstname" name="reservFirstname" placeholder="Votre prénom">
-        </div>
-        <div class="form-group col-12 col-md-6">
-            <label for="reservMail"></label>
-            <input type="email" class="form-control" id="reservMail" name="reservMail" placeholder="Votre mail">
-        </div>
-        <div class="form-group col-12 col-md-6">
-            <label for="reservPhone"></label>
-            <input type="tel" class="form-control" id="reservPhone" name="reservPhone" placeholder="Votre téléphone">
-        </div>
-        <div class="form-group col-12 col-md-6">
-            <label for="reservDate">Date de votre réservation</label>
-            <input type="date" class="form-control" id="reservDate" name="reservDate">
-        </div>
-        <div class="form-group col-12 col-md-6">
-            <label for="reservTime">Heure de votre réservation</label>
-            <input type="time" class="form-control" id="reservTime" name="reservTime">
-        </div>
-        <div class="form-group col-12 col-md-6">
-            <label for="reservNbr">Nombre de personnes</label>
-            <input type="number" class="form-control" id="reservNbr" name="reservNbr" value="1">
-        </div>
-        <input class="btn-action" type="submit" value="Envoyer">
-    </form>
-</div>
 
 {% endblock content %}

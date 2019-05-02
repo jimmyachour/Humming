@@ -34,15 +34,31 @@ class MenuManager extends AbstractManager
 
     public function updateTitleAndPrice(INT $id, Menu $menu):void
     {
-        $statement = $this->pdo->prepare("UPDATE $this->table SET title=:title, price=:price WHERE id =:id");
+        $statement = $this->pdo->prepare("UPDATE $this->table SET title=:title, price=:price, status=:status WHERE id =:id");
 
         $statement->bindValue('title', $menu->getTitle(), \PDO::PARAM_STR);
         $statement->bindValue('price', $menu->getPrice(), \PDO::PARAM_INT);
+        $statement->bindValue('status', $menu->getStatus(), \PDO::PARAM_BOOL);
         $statement->bindValue('id', $id, \PDO::PARAM_INT);
 
         $statement->execute();
     }
+  
+    public function selectAllActive()
+    {
+        return $this->pdo->query("SELECT * FROM $this->table WHERE status= 1")->fetchAll(\PDO::FETCH_CLASS,'App\Entity\Menu');
+    }
 
+    public function selectMenuById(int $id)
+    {
+        // prepared request
+        $statement = $this->pdo->prepare("SELECT * FROM $this->table WHERE id=:id");
+        $statement->bindValue('id', $id, \PDO::PARAM_INT);
+        $statement->execute();
+
+        return $statement->fetchObject('App\Entity\Menu');
+    }
+    
     public function selectAllWithDishes(): array
     {
         $statement = $this->pdo->prepare("SELECT menu.title AS menu , menu.price AS price, 

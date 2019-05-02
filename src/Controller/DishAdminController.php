@@ -12,6 +12,8 @@ class DishAdminController extends AbstractController
         $allDishManager = new DishManager();
         $allDish = $allDishManager->selectAll();
 
+        $notification = null;
+
         return $this->twig->render('DishAdmin/list.html.twig', [ 'allDish' => $allDish]);
     }
 
@@ -61,14 +63,11 @@ class DishAdminController extends AbstractController
             if ($id) {
                 $dishManager = new DishManager();
                 $dishManager->update($id, $dish);
-
-                header('Location: /admin/dish/list');
             } else {
                 $dishManager = new DishManager();
                 $dishManager->insert($dish);
-
-                header('Location: /admin/dish/list');
             }
+                header('Location: /admin/dish/list/?save=success');
         } else {
             return $dish->errors;
         }
