@@ -7,7 +7,6 @@ use App\Model\DishManager;
 use App\Model\MenuDishManager;
 use App\Model\MenuManager;
 
-
 class MenuAdminController extends AbstractController
 {
     public function list()
@@ -51,7 +50,7 @@ class MenuAdminController extends AbstractController
     public function update(INT $id)
     {
         $menuManager = new MenuManager();
-        $menu = $menuManager->selectOneById($id);
+        $menu = $menuManager->selectMenuById($id);
 
         $menuDishManager = new MenuDishManager();
         $dishOfMenu = $menuDishManager->selectAllDishOfOneMenu($id);
